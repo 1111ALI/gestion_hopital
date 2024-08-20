@@ -7,6 +7,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 @Getter
@@ -15,32 +17,39 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Table(name = "utilisateur")
-public class Users implements UserDetails {
+public class Users implements UserDetails{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idUtilisateur;
+    private int idUser;
     private String email;
-  private String fullName;
-  private int phoneNumber;
-  private String password;
-  private String confirmationPassword;
-  private int numberConnexion;
-  private Role role;
-
+    private String fullName;
+    private int phoneNumber;
+    private String password;
+    private String confirmationPassword;
+    private int numberConnexion;
+    private boolean isEnabled;
+    private boolean isConnected;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<Role> roles;
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="UserEntrepriseId",referencedColumnName = "idEntreprise")
+    private Entreprise entreprise;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
-    }
-
-    @Override
-    public String getPassword() {
-        return password;
+        return roles.stream()
+                .map(role -> (GrantedAuthority) role)
+                .collect(Collectors.toSet());
     }
 
     @Override
     public String getUsername() {
         return email;
+    }
+
+    @Override
+    public String getPassword(){
+        return password;
     }
 
     @Override
@@ -58,8 +67,7 @@ public class Users implements UserDetails {
         return UserDetails.super.isCredentialsNonExpired();
     }
 
-    @Override
-    public boolean isEnabled() {
-        return UserDetails.super.isEnabled();
+    public boolean isEnabled(){
+        return isEnabled;
     }
 }

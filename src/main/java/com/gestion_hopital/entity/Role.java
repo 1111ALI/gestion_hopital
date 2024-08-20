@@ -3,6 +3,8 @@ package com.gestion_hopital.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -13,6 +15,9 @@ import lombok.*;
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    private String role;
+    private int idRole;
+    private String nomRole;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="RoleUserId",referencedColumnName = "idUser")
+    private Users users;
 }
