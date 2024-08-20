@@ -1,12 +1,13 @@
 package com.gestion_hopital.entity;
 
+import com.gestion_hopital.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -29,16 +30,16 @@ public class Users implements UserDetails{
     private int numberConnexion;
     private boolean isEnabled;
     private boolean isConnected;
-    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
-    private Set<Role> roles;
+    @ElementCollection
+    private Set<Role> role;
     @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name="UserEntrepriseId",referencedColumnName = "idEntreprise")
     private Entreprise entreprise;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return roles.stream()
-                .map(role -> (GrantedAuthority) role)
+        return role.stream()
+                .map(role1 -> new SimpleGrantedAuthority(role1.name()))
                 .collect(Collectors.toSet());
     }
 
