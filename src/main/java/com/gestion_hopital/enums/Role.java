@@ -4,10 +4,15 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public enum Role {
-    ADMIN("Administrateur"),
-    CAISSIER("Caissier"),
-    COMPTABLE_MATIERE("Comptable matière"),
-    COMPTABLE("Comptable"),
-    TRESORIER("Trésorier");
-     private final String role;
+    ADMIN("Administratrur"),
+    CAISSIER ("Caissier"),
+    COMPTABLE_MATIERE ("Comptable matière"),
+    COMPTABLE ("Comptable"),
+    TRESORIER ("Trésorier");
+
+     private final String nameRole;
+
+    Role(String nameRole) {
+        this.nameRole = nameRole;
+    }
 }
