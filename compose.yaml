@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=ghopitaldb'
+      - 'POSTGRES_PASSWORD=root'
+      - 'POSTGRES_USER=root'
+    ports:
+      - '5432'
+
+  adminer:
+    image: 'adminer'
+    ports:
+      - '8083:8080'
