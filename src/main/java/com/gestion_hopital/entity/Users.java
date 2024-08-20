@@ -34,7 +34,7 @@ public class Users implements UserDetails{
     private Set<Role> role;
     @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name="UserEntrepriseId",referencedColumnName = "idEntreprise")
-    private Entreprise entreprise;
+    private Enterprise enterprise;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
