@@ -15,7 +15,7 @@ import java.util.Set;
 public class Enterprise {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idEntreprise;
+    private int idEnterprise;
     private String name;
     private String email;
     private int phoneNumber;
@@ -26,4 +26,10 @@ public class Enterprise {
     private String fileType;
     @OneToMany(mappedBy = "entreprise",cascade = CascadeType.ALL)
     private Set<Users> users;
+    @OneToMany(mappedBy = "entreprise",cascade = CascadeType.ALL)
+    private Set<Customer> customers;
+    @OneToMany(mappedBy = "entreprise",cascade = CascadeType.ALL)
+    private Set<Store> stores;
+    @OneToMany(mappedBy = "entreprise",cascade = CascadeType.ALL)
+    private Set<Product> products;
 }
