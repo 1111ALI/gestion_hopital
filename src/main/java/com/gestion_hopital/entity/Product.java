@@ -4,6 +4,8 @@ import com.gestion_hopital.enums.Category;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -24,9 +26,14 @@ public class Product {
     private double finalStock;
     private double finalValue;
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "productMagasinId",referencedColumnName = "idMagasin")
+    @JoinColumn(name = "productMagasinId",referencedColumnName = "idStore")
     private Store store;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "productEnterpriseId",referencedColumnName = "idEnterprise")
     private Enterprise enterprise;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "productUserId",referencedColumnName = "idUser")
+    private Users users;
+    @OneToMany(mappedBy = "product",cascade = CascadeType.ALL)
+    private Set<MvtStock> mvtStocks;
 }

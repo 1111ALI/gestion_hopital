@@ -5,5 +5,5 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 @RequiredArgsConstructor
-public class StoreView {
+public class MvtStockView {
 }

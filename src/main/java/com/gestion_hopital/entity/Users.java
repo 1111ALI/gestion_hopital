@@ -33,8 +33,16 @@ public class Users implements UserDetails{
     @ElementCollection
     private Set<Role> role;
     @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="UserEntrepriseId",referencedColumnName = "idEntreprise")
+    @JoinColumn(name="UserEntrepriseId",referencedColumnName = "idEnterprise")
     private Enterprise enterprise;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<Product> products;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<SellingService> sellingServices;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<MvtStock> mvtStocks;
+@OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+private Set<Store> stores;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -12,7 +12,5 @@ public enum Role {
 
      private final String nameRole;
 
-    Role(String nameRole) {
-        this.nameRole = nameRole;
-    }
+
 }

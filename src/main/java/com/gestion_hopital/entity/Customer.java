@@ -26,6 +26,6 @@ public class Customer {
     @JoinColumn(name = "CustomerUserId",referencedColumnName = "idUser")
     private Users users;
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="CustomerEntrepriseId",referencedColumnName = "idEntreprise")
+    @JoinColumn(name="CustomerEntrepriseId",referencedColumnName = "idEnterprise")
     private Enterprise enterprise;
 }

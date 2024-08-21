@@ -9,7 +9,5 @@ public enum Category {
 
     private final String nameCategory;
 
-    Category(String nameCategory) {
-        this.nameCategory = nameCategory;
-    }
+
 }

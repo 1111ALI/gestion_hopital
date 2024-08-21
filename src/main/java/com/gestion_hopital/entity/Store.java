@@ -15,13 +15,19 @@ import java.util.Set;
 public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idMagasin;
+    private int idStore;
     private String refMagasin;
     private String name;
     private String responsibleName;
     @OneToMany(mappedBy = "store",cascade = CascadeType.ALL)
     private Set<Product> products;
     @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="storeEntrepriseId",referencedColumnName = "idEnterprise")
     private Enterprise enterprise;
+    @OneToMany(mappedBy = "store",cascade = CascadeType.ALL)
+    private Set<MvtStock> mvtStocks;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "StoreUserId",referencedColumnName = "idUser")
+    private Users users;
 
 }
