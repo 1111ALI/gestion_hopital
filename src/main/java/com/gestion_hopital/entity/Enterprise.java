@@ -24,6 +24,7 @@ public class Enterprise {
     private String uniqueIdentificationNumber;
     private String fileName;
     private String fileType;
+    private double balanceCredit;
     @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
     private Set<Users> users;
     @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)

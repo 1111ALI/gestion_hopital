@@ -20,6 +20,7 @@ public class Cash {
    @JoinColumn(name = "CashUserId",referencedColumnName = "idUser")
     private Users users;
     private double balance;
+    private double balanceCredit;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="CashEnterpriseId",referencedColumnName = "idEnterprise")
     private Enterprise enterprise;

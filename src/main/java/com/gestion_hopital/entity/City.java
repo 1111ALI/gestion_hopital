@@ -17,6 +17,7 @@ public class City {
     private int idCity;
     private String refCity;
     private String name;
+    private double balanceCredit;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="CityRegionId",referencedColumnName = "idRegion")
     private Region region;
@@ -41,6 +42,5 @@ public class City {
     private Set<Bank> banks;
     @OneToMany(mappedBy = "city",cascade = CascadeType.ALL)
     private Set<MvtCash> mvtBanks;
-
 
 }

@@ -16,6 +16,7 @@ public class BankAccount {
     private int idBkAccount;
     private String bankAccountNumber;
     private double balance;
+    private double balanceCredit;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="bankAccountId",referencedColumnName = "idBank")
     private Bank bank;
