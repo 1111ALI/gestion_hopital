@@ -3,6 +3,9 @@ package com.gestion_hopital.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -20,7 +23,16 @@ public class SellingService {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="serviceUserId",referencedColumnName = "idUser")
     private Users users;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="serviceEnterpriseId",referencedColumnName = "idEnterprise")
     private Enterprise enterprise;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="serviceCountryId",referencedColumnName = "idCountry")
+    private Country country;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name="SellingServiceProduct",
+            joinColumns = @JoinColumn(name = "sellingServiceId"),
+            inverseJoinColumns = @JoinColumn(name="productId"))
+    private Set<Product> products=new HashSet<>();
+
 }

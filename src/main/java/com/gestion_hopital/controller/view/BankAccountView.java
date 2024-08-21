@@ -5,5 +5,5 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 @RequiredArgsConstructor
-public class SellingServiceView {
+public class BankAccountView {
 }

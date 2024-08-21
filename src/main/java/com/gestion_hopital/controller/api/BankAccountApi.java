@@ -1,13 +1,13 @@
 package com.gestion_hopital.controller.api;
 
-import com.gestion_hopital.services.interfaces.EnterpriseInterfaces;
+import com.gestion_hopital.services.interfaces.BankAccountInterfaces;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/entreprise/")
+@RequestMapping("/api/v1/bank-account/")
 @RequiredArgsConstructor
-public class EnterpriseApi {
-    private final EnterpriseInterfaces enterpriseInterfaces;
+public class BankAccountApi {
+    private final BankAccountInterfaces bankAccountInterfaces;
 }
