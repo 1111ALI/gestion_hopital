@@ -17,7 +17,7 @@ public class MvtStock {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idMvtStock;
-    private LocalDate CreationDate;
+    private LocalDate MvtDate;
     private String idOperation;
     private Category category;
     @ManyToOne(cascade = CascadeType.ALL)
@@ -37,4 +37,13 @@ public class MvtStock {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="mvtEnterpriseId",referencedColumnName = "idEnterprise")
     private Enterprise enterprise;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="mvtStockCountryId",referencedColumnName = "idCountry")
+    private Country country;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="mvtStockRegionId",referencedColumnName = "idRegion")
+    private Region region;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="mvtStockCityId",referencedColumnName = "idCity")
+    private City city;
 }

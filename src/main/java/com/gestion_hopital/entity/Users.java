@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @Builder
 @Table(name = "utilisateur")
-public class Users implements UserDetails{
+public class Users implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idUser;
@@ -32,17 +32,33 @@ public class Users implements UserDetails{
     private boolean isConnected;
     @ElementCollection
     private Set<Role> role;
-    @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="UserEntrepriseId",referencedColumnName = "idEnterprise")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "UserEntrepriseId", referencedColumnName = "idEnterprise")
     private Enterprise enterprise;
-    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
     private Set<Product> products;
-    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
     private Set<SellingService> sellingServices;
-    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
     private Set<MvtStock> mvtStocks;
-@OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
-private Set<Store> stores;
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
+    private Set<Store> stores;
+    @OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
+    private Cash cash;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "UserCountryId", referencedColumnName = "idCountry")
+    private Country country;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "UserRegionId", referencedColumnName = "idRegion")
+    private Region region;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "UserCityId", referencedColumnName = "idCity")
+    private City city;
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
+    private Set<MvtCash> mvtCashes;
+
+
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -57,7 +73,7 @@ private Set<Store> stores;
     }
 
     @Override
-    public String getPassword(){
+    public String getPassword() {
         return password;
     }
 
@@ -76,7 +92,7 @@ private Set<Store> stores;
         return UserDetails.super.isCredentialsNonExpired();
     }
 
-    public boolean isEnabled(){
+    public boolean isEnabled() {
         return isEnabled;
     }
 }

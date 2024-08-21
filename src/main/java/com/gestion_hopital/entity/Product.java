@@ -4,6 +4,8 @@ import com.gestion_hopital.enums.Category;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.security.Provider;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -36,4 +38,8 @@ public class Product {
     private Users users;
     @OneToMany(mappedBy = "product",cascade = CascadeType.ALL)
     private Set<MvtStock> mvtStocks;
+    @ManyToMany(mappedBy = "products")
+    private Set<SellingService> sellingServices=new HashSet<>();
+
+
 }

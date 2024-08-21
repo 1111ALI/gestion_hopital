@@ -36,4 +36,21 @@ public class Enterprise {
     private Set<MvtStock> mvtStocks;
     @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
     private Set<SellingService> sellingServices;
+    @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
+    private Set<Cash> cashs;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "EnterpriseCountryId",referencedColumnName = "idCountry")
+    private Country country;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "EnterpriseRegionId",referencedColumnName = "idRegion")
+    private Region region;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "EnterpriseCityId",referencedColumnName = "idCity")
+    private City city;
+    @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
+    private Set<Agency> agencies;
+    @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
+    private Set<MvtBank> mvtBanks;
+    @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
+    private Set<MvtCash> mvtCashes;
 }

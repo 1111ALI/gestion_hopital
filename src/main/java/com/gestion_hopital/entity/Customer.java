@@ -28,4 +28,13 @@ public class Customer {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="CustomerEntrepriseId",referencedColumnName = "idEnterprise")
     private Enterprise enterprise;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customerCountryId",referencedColumnName = "idCountry")
+    private Country country;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customerRegionId",referencedColumnName = "idRegion")
+    private Region region;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customerCityId",referencedColumnName = "idCity")
+    private City city;
 }
