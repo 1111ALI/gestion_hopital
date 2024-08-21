@@ -3,7 +3,7 @@ package com.gestion_hopital.enums;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public enum Sens {
+public enum SensOfOperation {
     ENCAISSEMENT("Encaissment"),
     DECAISSEMENT("Décaissements");
 

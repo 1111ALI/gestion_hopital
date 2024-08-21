@@ -40,6 +40,9 @@ public class Product {
     private Set<MvtStock> mvtStocks;
     @ManyToMany(mappedBy = "products")
     private Set<SellingService> sellingServices=new HashSet<>();
-
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(joinColumns = @JoinColumn(name="productId"),
+    inverseJoinColumns = @JoinColumn(name="supplierId"))
+    private Set<Supplier> suppliers;
 
 }

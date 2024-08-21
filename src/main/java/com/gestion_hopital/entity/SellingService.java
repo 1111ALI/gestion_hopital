@@ -20,6 +20,7 @@ public class SellingService {
     private String nom;
     private String description;
     private double price;
+    private double balanceCredit;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="serviceUserId",referencedColumnName = "idUser")
     private Users users;
@@ -34,5 +35,8 @@ public class SellingService {
             joinColumns = @JoinColumn(name = "sellingServiceId"),
             inverseJoinColumns = @JoinColumn(name="productId"))
     private Set<Product> products=new HashSet<>();
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="accountServiceId",referencedColumnName = "idAccountScheme")
+    private AccountScheme accountScheme;
 
 }

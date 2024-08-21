@@ -1,5 +1,6 @@
 package com.gestion_hopital.entity;
 
+import com.gestion_hopital.enums.SensOfOperation;
 import com.gestion_hopital.enums.StatusOfOperation;
 import jakarta.persistence.*;
 import lombok.*;
@@ -21,7 +22,7 @@ public class MvtCash {
     private String refOperationCash;
     private String type;
     private String motif;
-    private String sens;
+    private SensOfOperation sens;
     private double balanceBefore;
     private double amount;
     private double fee;

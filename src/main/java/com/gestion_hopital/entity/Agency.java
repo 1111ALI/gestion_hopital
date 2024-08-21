@@ -18,6 +18,7 @@ public class Agency {
     private int idAgency;
     private String refAgency;
     private String name;
+    private double balanceCredit;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="agencyCityId",referencedColumnName = "idCity")
     private City city;

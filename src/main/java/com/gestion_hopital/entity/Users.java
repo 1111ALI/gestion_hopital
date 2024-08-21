@@ -56,6 +56,10 @@ public class Users implements UserDetails {
     private City city;
     @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
     private Set<MvtCash> mvtCashes;
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
+    private Set<MvtBank> mvtBanks;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<AccountScheme> accountSchemes;
 
 
 

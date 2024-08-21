@@ -18,6 +18,7 @@ public class Region {
     private int idRegion;
     private String refRegion;
     private String name;
+    private double balanceCredit;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="regionCountryId",referencedColumnName = "idCountry")
     private Country country;
