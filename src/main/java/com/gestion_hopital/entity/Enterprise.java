@@ -24,12 +24,16 @@ public class Enterprise {
     private String uniqueIdentificationNumber;
     private String fileName;
     private String fileType;
-    @OneToMany(mappedBy = "entreprise",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
     private Set<Users> users;
-    @OneToMany(mappedBy = "entreprise",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
     private Set<Customer> customers;
-    @OneToMany(mappedBy = "entreprise",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
     private Set<Store> stores;
-    @OneToMany(mappedBy = "entreprise",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
     private Set<Product> products;
+    @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
+    private Set<MvtStock> mvtStocks;
+    @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
+    private Set<SellingService> sellingServices;
 }

@@ -2,7 +2,6 @@ package com.gestion_hopital.configurations;
 
 import com.gestion_hopital.enums.Role;
 import com.gestion_hopital.entity.Users;
-import com.gestion_hopital.repository.RoleRepository;
 import com.gestion_hopital.repository.UsersRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
