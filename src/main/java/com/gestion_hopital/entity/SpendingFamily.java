@@ -3,24 +3,26 @@ package com.gestion_hopital.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "compteBancaire")
-public class BankAccount {
+@Table(name = "FamilleDeDepense")
+public class SpendingFamily {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idBkAccount;
-    private String bankAccountNumber;
+    private int idFamily;
+    private String refFamily;
+    private String name;
     private double balance;
     private double balanceCredit;
+    @OneToMany(mappedBy = "spendingFamily",cascade = CascadeType.ALL)
+    private Set<Spent> expenses;
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="bankAccountId",referencedColumnName = "idBank")
-    private Bank bank;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "bankAccountUserd",referencedColumnName = "idUser")
+    @JoinColumn(name = "familysUserId",referencedColumnName = "idUser")
     private Users users;
 }

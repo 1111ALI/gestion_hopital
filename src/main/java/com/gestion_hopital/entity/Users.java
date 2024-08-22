@@ -60,6 +60,32 @@ public class Users implements UserDetails {
     private Set<MvtBank> mvtBanks;
     @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
     private Set<AccountScheme> accountSchemes;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "UsersAgencyId",referencedColumnName = "idAgency")
+    private Agency agencys;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<Bank> banks;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<BankAccount> bankAccounts;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<ChartOfAccounts> chartOfAccounts;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<City> citys;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id",referencedColumnName = "idCustomer")
+    private Customer customer;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<MobileMoney> mobileMonies;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<OperateurMomo> operateurMomos;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<Profit> profits;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<Sale> sales;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<SpendingFamily> spendingFamilies;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<Supplier> suppliers;
 
 
 

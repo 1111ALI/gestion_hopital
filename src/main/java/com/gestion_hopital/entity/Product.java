@@ -47,5 +47,8 @@ public class Product {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "pruductPurchaseId",referencedColumnName = "idPurchase")
     private Purchase purchase;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "pruductSaleId",referencedColumnName = "idSale")
+    private Sale sale;
 
 }

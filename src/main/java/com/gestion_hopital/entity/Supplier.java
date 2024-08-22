@@ -22,8 +22,12 @@ public class Supplier {
     private String numberPhone;
     private String adresse;
     private String pointFocal;
+    private double balanceCredit;
     @ManyToMany(mappedBy = "suppliers",cascade = CascadeType.ALL)
     private Set<Product> products=new HashSet<>();
     @OneToMany(mappedBy = "supplier",cascade = CascadeType.ALL)
     private Set<Purchase> purchases;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "supplierUserId",referencedColumnName = "idUser")
+    private Users users;
 }

@@ -38,5 +38,7 @@ public class Country {
     private Set<City> citys;
     @OneToMany(mappedBy = "country",cascade = CascadeType.ALL)
     private Set<MvtCash> mvtBanks;
+    @OneToMany(mappedBy = "country",cascade = CascadeType.ALL)
+    private Set<Users> users;
 
 }

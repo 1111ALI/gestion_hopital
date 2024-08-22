@@ -19,6 +19,7 @@ public class Store {
     private String refMagasin;
     private String name;
     private String responsibleName;
+    private double balanceCredit;
     @OneToMany(mappedBy = "store",cascade = CascadeType.ALL)
     private Set<Product> products;
     @ManyToOne(cascade = CascadeType.ALL)
