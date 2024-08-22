@@ -22,5 +22,8 @@ public class ChartOfAccounts {
     private Set<AccountScheme> accountSchemeDebit;
     @ManyToMany(mappedBy = "chartOfAccountsCredit",cascade = CascadeType.ALL)
     private Set<AccountScheme> accountSchemeCredit;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "chartAccountUserd",referencedColumnName = "idUser")
+    private Users users;
 
 }

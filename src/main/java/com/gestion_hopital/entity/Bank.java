@@ -32,4 +32,7 @@ public class Bank {
     private Set<BankAccount> bankAccounts;
     @OneToMany(mappedBy = "bank",cascade = CascadeType.ALL)
     private Set<MvtBank> mvtBanks;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "bankUserd",referencedColumnName = "idUser")
+    private Users users;
 }

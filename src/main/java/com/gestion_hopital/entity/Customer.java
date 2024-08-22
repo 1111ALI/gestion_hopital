@@ -3,6 +3,8 @@ package com.gestion_hopital.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -13,7 +15,7 @@ import lombok.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idClient;
+    private int idCustomer;
     private String refClient;
     private String name;
     private String adresse;
@@ -23,8 +25,7 @@ public class Customer {
     private double retrait;
     private double solde;
     private double balanceCredit;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "CustomerUserId",referencedColumnName = "idUser")
+    @OneToOne(mappedBy = "customer",cascade = CascadeType.ALL)
     private Users users;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="CustomerEntrepriseId",referencedColumnName = "idEnterprise")
@@ -38,4 +39,6 @@ public class Customer {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "customerCityId",referencedColumnName = "idCity")
     private City city;
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
+    private Set<Sale> sales;
 }

@@ -35,4 +35,6 @@ public class Agency {
     private Set<MvtCash> mvtCashs;
     @OneToMany(mappedBy = "agency",cascade = CascadeType.ALL)
     private Set<MvtCash> mvtBanks;
+   @OneToMany(mappedBy = "agencys",cascade = CascadeType.ALL)
+    private Set<Users> users;
 }

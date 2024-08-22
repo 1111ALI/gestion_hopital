@@ -42,5 +42,8 @@ public class City {
     private Set<Bank> banks;
     @OneToMany(mappedBy = "city",cascade = CascadeType.ALL)
     private Set<MvtCash> mvtBanks;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cityUserd",referencedColumnName = "idUser")
+    private Users users;
 
 }
