@@ -35,6 +35,16 @@ public class Agency {
     private Set<MvtCash> mvtCashs;
     @OneToMany(mappedBy = "agency",cascade = CascadeType.ALL)
     private Set<MvtCash> mvtBanks;
-   @OneToMany(mappedBy = "agencys",cascade = CascadeType.ALL)
+   @OneToMany(mappedBy = "agency",cascade = CascadeType.ALL)
     private Set<Users> users;
+   @OneToMany(mappedBy = "agency",cascade = CascadeType.ALL)
+    private Set<Invoice> invoices;
+   @OneToMany(mappedBy = "agency",cascade = CascadeType.ALL)
+    private Set<Profit> profits;
+   @OneToMany(mappedBy = "agency",cascade = CascadeType.ALL)
+    private Set<Purchase> purchases;
+   @OneToMany(mappedBy = "agency",cascade = CascadeType.ALL)
+    private Set<Sale> sales;
+   @OneToMany(mappedBy = "agency",cascade = CascadeType.ALL)
+    private Set<Payment> payments;
 }

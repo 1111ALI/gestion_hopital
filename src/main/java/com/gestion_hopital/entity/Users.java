@@ -62,7 +62,7 @@ public class Users implements UserDetails {
     private Set<AccountScheme> accountSchemes;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "UsersAgencyId",referencedColumnName = "idAgency")
-    private Agency agencys;
+    private Agency agency;
     @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
     private Set<Bank> banks;
     @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
@@ -86,6 +86,14 @@ public class Users implements UserDetails {
     private Set<SpendingFamily> spendingFamilies;
     @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
     private Set<Supplier> suppliers;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<Invoice> invoices;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<Purchase> purchases;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<Spent> spents;
+    @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<Payment> payments;
 
 
 

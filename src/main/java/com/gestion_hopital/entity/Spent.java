@@ -21,5 +21,8 @@ public class Spent {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="spentFamilyId",referencedColumnName = "idFamily")
     private SpendingFamily spendingFamily;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "spentUserId",referencedColumnName = "idUser")
+    private Users users;
 
 }
