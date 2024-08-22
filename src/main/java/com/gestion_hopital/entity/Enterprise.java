@@ -54,4 +54,14 @@ public class Enterprise {
     private Set<MvtBank> mvtBanks;
     @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
     private Set<MvtCash> mvtCashes;
+    @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
+    private Set<Invoice> invoices;
+    @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
+    private Set<Profit> profits;
+    @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
+    private Set<Purchase> purchases;
+    @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
+    private Set<Sale> sales;
+    @OneToMany(mappedBy = "enterprise",cascade = CascadeType.ALL)
+    private Set<Payment> payments;
 }

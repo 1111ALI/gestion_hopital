@@ -40,5 +40,15 @@ public class Region {
     private Set<Bank> banks;
     @OneToMany(mappedBy = "region",cascade = CascadeType.ALL)
     private Set<MvtCash> mvtBanks;
+    @OneToMany(mappedBy = "region",cascade = CascadeType.ALL)
+    private Set<Invoice> invoices;
+    @OneToMany(mappedBy = "region",cascade = CascadeType.ALL)
+    private Set<Profit> profits;
+    @OneToMany(mappedBy = "region",cascade = CascadeType.ALL)
+    private Set<Sale> sales;
+    @OneToMany(mappedBy = "region",cascade = CascadeType.ALL)
+    private Set<Purchase> purchases;
+    @OneToMany(mappedBy = "region",cascade = CascadeType.ALL)
+    private Set<Payment> payments;
 
 }

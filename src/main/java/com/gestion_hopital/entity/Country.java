@@ -40,5 +40,17 @@ public class Country {
     private Set<MvtCash> mvtBanks;
     @OneToMany(mappedBy = "country",cascade = CascadeType.ALL)
     private Set<Users> users;
+    @OneToMany(mappedBy = "country",cascade = CascadeType.ALL)
+    private Set<Invoice> invoices;
+    @OneToMany(mappedBy = "country",cascade = CascadeType.ALL)
+    private Set<OperateurMomo> operateurMomos;
+    @OneToMany(mappedBy = "country",cascade = CascadeType.ALL)
+    private Set<Profit> profits;
+    @OneToMany(mappedBy = "country",cascade = CascadeType.ALL)
+    private Set<Purchase> purchases;
+    @OneToMany(mappedBy = "country",cascade = CascadeType.ALL)
+    private Set<Sale> sales;
+    @OneToMany(mappedBy = "country",cascade = CascadeType.ALL)
+    private Set<Payment> payments;
 
 }

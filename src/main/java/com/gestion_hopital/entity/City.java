@@ -45,5 +45,16 @@ public class City {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cityUserd",referencedColumnName = "idUser")
     private Users users;
+    @OneToMany(mappedBy = "city",cascade = CascadeType.ALL)
+    private Set<Invoice> invoices;
+    @OneToMany(mappedBy = "city",cascade = CascadeType.ALL)
+    private Set<Profit> profits;
+    @OneToMany(mappedBy = "city",cascade = CascadeType.ALL)
+    private Set<Purchase> purchases;
+    @OneToMany(mappedBy = "city",cascade = CascadeType.ALL)
+    private Set<Sale> sales;
+    @OneToMany(mappedBy = "city",cascade = CascadeType.ALL)
+    private Set<Payment> payments;
+
 
 }

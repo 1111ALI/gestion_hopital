@@ -18,4 +18,7 @@ public class OperateurMomo {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="momoOpUserId",referencedColumnName = "idUser")
     private Users users;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="momoOpCountryId",referencedColumnName = "idCountry")
+    private Country country;
 }

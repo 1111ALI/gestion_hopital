@@ -50,5 +50,8 @@ public class Product {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "pruductSaleId",referencedColumnName = "idSale")
     private Sale sale;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="produictInvoiceId",referencedColumnName = "idInvoice")
+    private Invoice invoice;
 
 }

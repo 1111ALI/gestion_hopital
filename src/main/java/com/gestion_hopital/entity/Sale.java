@@ -35,4 +35,19 @@ public class Sale {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "saleUserId",referencedColumnName = "idUser")
     private Users users;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "SaleAgencyId",referencedColumnName = "idAgency")
+    private Agency agency;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "SaleCityId",referencedColumnName = "idCity")
+    private City city;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "SaleeRegionId",referencedColumnName = "idRegion")
+    private Region region;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "SaleEnterpriseId",referencedColumnName = "idEnterprise")
+    private Enterprise enterprise;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "SaleCountryId",referencedColumnName = "idCountry")
+    private Country country;
 }

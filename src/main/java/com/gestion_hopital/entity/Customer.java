@@ -41,4 +41,8 @@ public class Customer {
     private City city;
     @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
     private Set<Sale> sales;
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
+    private Set<Invoice> invoices;
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
+    private Set<Payment> payments;
 }
