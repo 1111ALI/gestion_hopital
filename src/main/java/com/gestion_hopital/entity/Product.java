@@ -44,5 +44,8 @@ public class Product {
     @JoinTable(joinColumns = @JoinColumn(name="productId"),
     inverseJoinColumns = @JoinColumn(name="supplierId"))
     private Set<Supplier> suppliers;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "pruductPurchaseId",referencedColumnName = "idPurchase")
+    private Purchase purchase;
 
 }
