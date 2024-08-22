@@ -24,4 +24,6 @@ public class Supplier {
     private String pointFocal;
     @ManyToMany(mappedBy = "suppliers",cascade = CascadeType.ALL)
     private Set<Product> products=new HashSet<>();
+    @OneToMany(mappedBy = "supplier",cascade = CascadeType.ALL)
+    private Set<Purchase> purchases;
 }
