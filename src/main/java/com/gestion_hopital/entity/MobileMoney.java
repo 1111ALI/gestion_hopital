@@ -9,7 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "mobileMoney")
 public class MobileMoney {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,6 +17,7 @@ public class MobileMoney {
     @JoinColumn(name="OperateurMomoId",referencedColumnName = "idOpMomo")
     private OperateurMomo operateurMomo;
     private double balance;
+    private double balanceCredit;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="momoUserId",referencedColumnName = "idUser")
     private Users users;

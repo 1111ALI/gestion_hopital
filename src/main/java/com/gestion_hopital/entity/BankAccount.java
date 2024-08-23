@@ -9,7 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "compteBancaire")
 public class BankAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

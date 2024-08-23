@@ -11,7 +11,6 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "facture")
 public class Invoice {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,6 +23,7 @@ public class Invoice {
     @OneToMany(mappedBy = "invoice",cascade = CascadeType.ALL)
     private Set<Product> products;
     private double amount;
+    private double balanceCredit;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="InvoiceCityId",referencedColumnName = "idCity")
     private City city;

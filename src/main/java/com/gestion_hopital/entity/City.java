@@ -10,7 +10,6 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "ville")
 public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -42,9 +41,8 @@ public class City {
     private Set<Bank> banks;
     @OneToMany(mappedBy = "city",cascade = CascadeType.ALL)
     private Set<MvtCash> mvtBanks;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cityUserd",referencedColumnName = "idUser")
-    private Users users;
+    @OneToMany(mappedBy = "city", cascade = CascadeType.ALL)
+    private Set<Users> users;
     @OneToMany(mappedBy = "city",cascade = CascadeType.ALL)
     private Set<Invoice> invoices;
     @OneToMany(mappedBy = "city",cascade = CascadeType.ALL)

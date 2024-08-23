@@ -9,7 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "depense")
 public class Spent {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

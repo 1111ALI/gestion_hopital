@@ -13,7 +13,6 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "mvtBank")
 public class MvtBank {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

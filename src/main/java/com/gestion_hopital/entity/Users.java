@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "utilisateur")
 public class Users implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -70,12 +69,9 @@ public class Users implements UserDetails {
     @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
     private Set<ChartOfAccounts> chartOfAccounts;
     @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
-    private Set<City> citys;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "customer_id",referencedColumnName = "idCustomer")
-    private Customer customer;
+     private Set<Customer> customer;
     @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
-    private Set<MobileMoney> mobileMonies;
+    private Set<MobileMoney> mobileMoney;
     @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
     private Set<OperateurMomo> operateurMomos;
     @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)

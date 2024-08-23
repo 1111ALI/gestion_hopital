@@ -11,7 +11,6 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "region")
 public class Region {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

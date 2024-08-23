@@ -11,7 +11,6 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "caisse")
 public class Cash {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,6 +29,12 @@ public class Cash {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="CashCityId",referencedColumnName = "idCity")
     private City city;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="cashAgencyId",referencedColumnName = "idAgency")
+    private Agency agency;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="cashCountryId",referencedColumnName = "idCountry")
+    private Country country;
     @OneToMany(mappedBy = "cash",cascade = CascadeType.ALL)
     private Set<MvtCash> mvtcashes;
 }

@@ -16,7 +16,7 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idCustomer;
-    private String refClient;
+    private String refCustomer;
     private String name;
     private String adresse;
     private int phoneNumber;
@@ -25,7 +25,8 @@ public class Customer {
     private double retrait;
     private double solde;
     private double balanceCredit;
-    @OneToOne(mappedBy = "customer",cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="customUserId",referencedColumnName = "idUser")
     private Users users;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="CustomerEntrepriseId",referencedColumnName = "idEnterprise")

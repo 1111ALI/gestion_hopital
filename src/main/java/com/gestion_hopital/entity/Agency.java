@@ -11,7 +11,6 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "agence")
 public class Agency {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -47,4 +46,6 @@ public class Agency {
     private Set<Sale> sales;
    @OneToMany(mappedBy = "agency",cascade = CascadeType.ALL)
     private Set<Payment> payments;
+   @OneToMany(mappedBy = "agency",cascade = CascadeType.ALL)
+    private Set<Cash> cashes;
 }

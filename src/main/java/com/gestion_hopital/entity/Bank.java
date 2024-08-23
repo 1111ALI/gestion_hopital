@@ -11,7 +11,6 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "banque")
 public class Bank {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
