@@ -18,13 +18,17 @@ public class DetailConnexionUser implements UserDetailsService {
     private final UsersRepository usersRepository;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Users users=usersRepository.findByEmail(username).orElseThrow(()->new RuntimeException("Utilisateur introuvable"));
-       if(users.isConnected()){
+        Users existingUser=usersRepository.findByUsername(username).orElseThrow(()->new RuntimeException("Utilisateur introuvable"));
+        if(!existingUser.isEnabled()){
+            throw new UsernameNotFoundException("Utilisateur inactif");
+        }
+        if(existingUser.isConnected()){
            throw new UsernameNotFoundException("Utilisateur déjà connecté");
        }
-       users.setNumberConnexion(users.getNumberConnexion()+1);
-       usersRepository.save(users);
-        return new User(users.getUsername(),users.getPassword(),users.getRole().stream()
+        existingUser.setNumberConnexion(existingUser.getNumberConnexion()+1);
+        existingUser.setConnected(true);
+       //usersRepository.save(existingUser);
+        return new User(existingUser.getUsername(),existingUser.getPassword(),existingUser.getRoles().stream()
                 .map(role -> new SimpleGrantedAuthority(role.name()))
                 .collect(Collectors.toSet()));
     }

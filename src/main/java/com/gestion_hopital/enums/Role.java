@@ -6,12 +6,11 @@ import lombok.RequiredArgsConstructor;
 public enum Role {
     ADMIN("Administratrur"),
     CASHIER ("Caissier"),
-
     MATERIAL_ACCOUNTANT ("Comptable matière"),
     ACCOUNTANT("Comptable"),
     TREASURER ("Trésorier");
 
-     private final String nameRole;
+     private final String roleName;
 
 
 }
