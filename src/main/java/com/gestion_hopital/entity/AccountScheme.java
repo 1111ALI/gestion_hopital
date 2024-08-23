@@ -12,7 +12,6 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "schemaComptable")
 public class AccountScheme {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

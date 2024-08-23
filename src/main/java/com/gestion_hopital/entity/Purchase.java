@@ -13,7 +13,6 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "achat")
 public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

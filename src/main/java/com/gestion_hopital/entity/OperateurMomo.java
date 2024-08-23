@@ -9,7 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "operateurMomo")
 public class OperateurMomo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

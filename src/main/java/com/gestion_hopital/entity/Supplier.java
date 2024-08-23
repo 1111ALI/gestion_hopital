@@ -12,7 +12,6 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "fournisseur")
 public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

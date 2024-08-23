@@ -9,7 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "reglement")
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,6 +20,8 @@ public class Payment {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="paymentInvoiceId",referencedColumnName = "idInvoice")
     private Invoice invoice;
+    private double amount;
+    private double balanceCredit;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "paymentUserId",referencedColumnName = "idUser")
     private Users users;

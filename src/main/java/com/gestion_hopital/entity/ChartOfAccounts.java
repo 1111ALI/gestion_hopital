@@ -11,7 +11,6 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "planComptable")
 public class ChartOfAccounts {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
