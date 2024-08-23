@@ -1,6 +1,7 @@
 package com.gestion_hopital.configurations;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -24,7 +25,7 @@ public class SecurityConfiguration {
                         .anyRequest().authenticated())
                 .formLogin(login->login
                         .loginPage("/login")
-                        .defaultSuccessUrl("/home")
+                        .defaultSuccessUrl("/home",true)
                         .permitAll())
                 .logout(logout->logout
                         .logoutUrl("/logout")
@@ -42,6 +43,7 @@ public class SecurityConfiguration {
         return detailConnexionUser;
     }
 
+    @Autowired
     public void globalConfiguration(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(detailConnexionUser);
     }

@@ -2,55 +2,36 @@
 <html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
-    <title>Page connexion</title>
-    <style>
-
-body{
-    margin:0;
-    padding:0;
-    font-family: poppins,verdana,sans-serif;
-}
-@media screen and (min-width:900px){
-    .form__login{
-        height:30%;
-        width:30%;
-        position: absolute;
-        left:35%;
-        top: 30%;
-        }
-       
-} 
-    
-      
-    </style>
+    <title>Connexion</title>
+    <link rel='stylesheet' th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/custom_css/style.css}">
+    <link rel='stylesheet' th:href="@{https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap}"><link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
-<form action="/login" method="post" class="form__login">
-    <fieldset>
-        <legend>Paramètres de conexion</legend>
-    <div class="form-floating mb-3 border">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email address</label>
+    <div class="form__login">
+<form th:action="@{/login}" method="post" th:object="${users}">
+<div class="titreApp">G-Clinic</div>
+    <div class="form-floating mb-3">
+        <input type="email" name="username" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Adresse Email</label>
     </div>
     <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Password</label>
+        <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Mot de passe">
+        <label for="floatingPassword">Mot de passe</label>
     </div>
     <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
-        <button type="submit" class="btn btn-outline-primary">Se Connecter</button>
+        <div class="col-5"><button type="submit" class="btn btn-primary">Se connecter</button></div>
+        <div class="col-1"></div>
+        <div class="col-6"><a th:href="@{/}">Mot de passe oublié?</a></div>
     </div>
-        <div class="col-4"></div>
-    </div>
- 
-
-</fieldset>
+    
 </form>
+</div>
 
 
-<script th:src="@{/js/bootstrap.bundle.js}"></script>
+<footer>
+    ©Copyright G-Clinic v-1.0- POWERED BY KWADJIO NANA Roméo Yannick
+</footer>
+<script th:src="@{/js/bootstrap.js}"></script>
 </body>
 </html>

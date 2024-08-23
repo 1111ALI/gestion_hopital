@@ -22,10 +22,10 @@ public class DataInitialize {
     @PostConstruct
     public void init() {
 
-        Optional<Users> users = usersRepository.findByEmail("ghopital@gmail.com");
+        Optional<Users> users = usersRepository.findByUsername("ghopital@gmail.com");
         if (users.isEmpty()) {
             Users newUsers = new Users();
-            newUsers.setEmail("ghopital@gmail.com");
+            newUsers.setUsername("ghopital@gmail.com");
             newUsers.setFullName("ghopital@gmail.com");
             newUsers.setPhoneNumber(655037336);
             newUsers.setPassword(passwordEncoder.encode("ghopital@gmail.com"));
@@ -33,7 +33,7 @@ public class DataInitialize {
             newUsers.setNumberConnexion(0);
             newUsers.setEnabled(true);
             newUsers.setConnected(false);
-            newUsers.setRole(Set.of(Role.ADMIN));
+            newUsers.setRoles(Set.of(Role.ADMIN));
             usersRepository.save(newUsers);
         }
 
