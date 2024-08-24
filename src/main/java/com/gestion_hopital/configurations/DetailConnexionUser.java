@@ -28,8 +28,6 @@ public class DetailConnexionUser implements UserDetailsService {
         existingUser.setNumberConnexion(existingUser.getNumberConnexion()+1);
         existingUser.setConnected(true);
        //usersRepository.save(existingUser);
-        return new User(existingUser.getUsername(),existingUser.getPassword(),existingUser.getRoles().stream()
-                .map(role -> new SimpleGrantedAuthority(role.name()))
-                .collect(Collectors.toSet()));
+        return new User(existingUser.getUsername(),existingUser.getPassword(),existingUser.getRole());
     }
 }

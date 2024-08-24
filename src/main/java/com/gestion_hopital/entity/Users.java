@@ -1,6 +1,5 @@
 package com.gestion_hopital.entity;
 
-import com.gestion_hopital.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -24,8 +23,8 @@ public class Users {
     private int numberConnexion;
     private boolean isEnabled;
     private boolean isConnected;
-    @OneToMany(mappedBy = "users")
-    private Set<Role> roles;
+ @ManyToMany(mappedBy = "users",cascade = CascadeType.ALL)
+    private Set<Role> role;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "UserEntrepriseId", referencedColumnName = "idEnterprise")
     private Enterprise enterprise;
@@ -85,5 +84,7 @@ public class Users {
     private Set<Spent> spents;
     @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
     private Set<Payment> payments;
+   @OneToMany(mappedBy = "users",cascade = CascadeType.ALL)
+   private Set<Task> tasks;
 
 }
