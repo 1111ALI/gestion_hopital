@@ -17,9 +17,8 @@ public class Enterprise {
     private int idEnterprise;
     private String name;
     private String email;
-    private int phoneNumber;
+    private String phoneNumber;
     private String slogan;
-    private int mailbox;
     private String uniqueIdentificationNumber;
     private String fileName;
     private String fileType;

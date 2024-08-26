@@ -39,9 +39,7 @@ public class Invoice {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="InvoiceCountryId",referencedColumnName = "idCountry")
     private Country country;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="InvoiceUserId",referencedColumnName = "idUser")
-    private Users users;
+    private String users;
     @OneToMany(mappedBy = "invoice",cascade = CascadeType.ALL)
     private Set<Payment> payments;
 }

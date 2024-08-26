@@ -20,9 +20,7 @@ public class SellingService {
     private String description;
     private double price;
     private double balanceCredit;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="serviceUserId",referencedColumnName = "idUser")
-    private Users users;
+    private String users;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="serviceEnterpriseId",referencedColumnName = "idEnterprise")
     private Enterprise enterprise;

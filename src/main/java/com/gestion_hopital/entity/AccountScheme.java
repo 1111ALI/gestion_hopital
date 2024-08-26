@@ -24,7 +24,5 @@ public class AccountScheme {
     @JoinTable(joinColumns = @JoinColumn(name="accountCreditId"),
             inverseJoinColumns = @JoinColumn(name="schemeCreditId"))
     private Set<ChartOfAccounts> chartOfAccountsCredit;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "accountUserId",referencedColumnName = "idUser")
-    private Users users;
+    private String nameUsers;
 }

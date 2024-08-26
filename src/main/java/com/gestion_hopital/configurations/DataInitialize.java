@@ -1,8 +1,7 @@
 package com.gestion_hopital.configurations;
 
-import com.gestion_hopital.entity.Role;
 import com.gestion_hopital.entity.Users;
-import com.gestion_hopital.repository.RoleRepository;
+import com.gestion_hopital.enums.Role;
 import com.gestion_hopital.repository.UsersRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
@@ -19,30 +18,25 @@ public class DataInitialize {
 
     private final PasswordEncoder passwordEncoder;
     private final UsersRepository usersRepository;
-    private final RoleRepository roleRepository;
+
 
     @PostConstruct
     public void init() {
-Optional<Role> existingRoleADMIN=roleRepository.findByRole("ADMIN");
-if(existingRoleADMIN.isEmpty()){
-    Role newRole=new Role();
-    newRole.setRole("ADMIN");
-    roleRepository.save(newRole);
-}
 
-        Role roleAdmin=roleRepository.findByRole("ADMIN").orElseThrow(()->new RuntimeException("Role introuvable"));
+
         Optional<Users> users = usersRepository.findByUsername("ghopital@gmail.com");
         if (users.isEmpty()) {
             Users newUsers = new Users();
             newUsers.setUsername("ghopital@gmail.com");
             newUsers.setFullName("ghopital@gmail.com");
-            newUsers.setPhoneNumber(655037336);
-            newUsers.setPassword(passwordEncoder.encode("ghopital@gmail.com"));
-            newUsers.setConfirmationPassword(passwordEncoder.encode("ghopital@gmail.com"));
+            newUsers.setPhoneNumber("655037336");
+            String encodePassword= passwordEncoder.encode("ghopital@gmail.com");
+            newUsers.setPassword(encodePassword);
+            newUsers.setConfirmationPassword(encodePassword);
             newUsers.setNumberConnexion(0);
+            newUsers.setRole(Set.of(Role.ADMIN));
             newUsers.setEnabled(true);
             newUsers.setConnected(false);
-            newUsers.setRole(roleAdmin);
             usersRepository.save(newUsers);
 
         }

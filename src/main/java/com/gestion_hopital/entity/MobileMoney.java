@@ -18,7 +18,5 @@ public class MobileMoney {
     private OperateurMomo operateurMomo;
     private double balance;
     private double balanceCredit;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="momoUserId",referencedColumnName = "idUser")
-    private Users users;
+    private String users;
 }

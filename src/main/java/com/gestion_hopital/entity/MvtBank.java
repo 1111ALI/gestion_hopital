@@ -41,9 +41,7 @@ public class MvtBank {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="MvtBankCityId",referencedColumnName = "idCity")
     private City city;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="MvtCashUsersId",referencedColumnName = "idUser")
-    private Users users;
+    private String users;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="MvtBankEnterpriseId",referencedColumnName = "idEnterprise")
     private Enterprise enterprise;

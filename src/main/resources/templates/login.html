@@ -3,13 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Connexion</title>
-    <link rel='stylesheet' th:href="@{/css/bootstrap.css}">
+    <link rel='stylesheet' th:href="@{/bootstrap/css/bootstrap.css}">
     <link rel="stylesheet" th:href="@{/custom_css/style.css}">
-    <link rel='stylesheet' th:href="@{https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap}"><link rel="stylesheet" href="./style.css">
-</head>
+    </head>
+<style>
+    body {
+  background-color:#344955;
+   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+footer{
+font-size:12px;
+width:100%;
+position:absolute;
+bottom:0%;
+display:flex;
+flex-direction:row;
+justify-content: center;
+align-items:center;
+height:50px;
+opacity:0.7;
+ margin-top: 50px;
+}
+
+</style>
 <body>
+
     <div class="form__login">
-<form th:action="@{/login}" method="post" th:object="${users}">
+<form th:action="@{/login}" method="post">
 <div class="titreApp">G-Clinic</div>
     <div class="form-floating mb-3">
         <input type="email" name="username" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -32,6 +56,6 @@
 <footer>
     ©Copyright G-Clinic v-1.0- POWERED BY KWADJIO NANA Roméo Yannick
 </footer>
-<script th:src="@{/js/bootstrap.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.js}"></script>
 </body>
 </html>

@@ -22,12 +22,11 @@ public class DetailConnexionUser implements UserDetailsService {
         if(!existingUser.isEnabled()){
             throw new UsernameNotFoundException("Utilisateur inactif");
         }
-        if(existingUser.isConnected()){
-           throw new UsernameNotFoundException("Utilisateur déjà connecté");
-       }
+
         existingUser.setNumberConnexion(existingUser.getNumberConnexion()+1);
-        existingUser.setConnected(true);
-       //usersRepository.save(existingUser);
-        return new User(existingUser.getUsername(),existingUser.getPassword(),existingUser.getRole());
+       usersRepository.save(existingUser);
+        return new User(existingUser.getUsername(),existingUser.getPassword(),existingUser.getRole().stream()
+                .map(role -> new SimpleGrantedAuthority(role.name()))
+                .collect(Collectors.toSet()));
     }
 }

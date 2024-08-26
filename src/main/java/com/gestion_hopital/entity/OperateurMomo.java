@@ -14,9 +14,7 @@ public class OperateurMomo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idOpMomo;
     private String name;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="momoOpUserId",referencedColumnName = "idUser")
-    private Users users;
+    private String users;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="momoOpCountryId",referencedColumnName = "idCountry")
     private Country country;

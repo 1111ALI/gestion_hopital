@@ -26,9 +26,7 @@ public class Store {
     private Enterprise enterprise;
     @OneToMany(mappedBy = "store",cascade = CascadeType.ALL)
     private Set<MvtStock> mvtStocks;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "StoreUserId",referencedColumnName = "idUser")
-    private Users users;
+    private String users;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "StoreCountryId",referencedColumnName = "idCountry")
     private Country country;
