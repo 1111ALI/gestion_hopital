@@ -21,7 +21,5 @@ public class SpendingFamily {
     private double balanceCredit;
     @OneToMany(mappedBy = "spendingFamily",cascade = CascadeType.ALL)
     private Set<Spent> expenses;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "familysUserId",referencedColumnName = "idUser")
-    private Users users;
+    private String users;
 }

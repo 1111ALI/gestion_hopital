@@ -19,7 +19,5 @@ public class BankAccount {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="bankAccountId",referencedColumnName = "idBank")
     private Bank bank;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "bankAccountUserd",referencedColumnName = "idUser")
-    private Users users;
+    private String nameUsers;
 }

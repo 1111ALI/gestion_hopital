@@ -32,9 +32,7 @@ public class Product {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "productEnterpriseId",referencedColumnName = "idEnterprise")
     private Enterprise enterprise;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "productUserId",referencedColumnName = "idUser")
-    private Users users;
+    private String users;
     @OneToMany(mappedBy = "product",cascade = CascadeType.ALL)
     private Set<MvtStock> mvtStocks;
     @ManyToMany(mappedBy = "products")

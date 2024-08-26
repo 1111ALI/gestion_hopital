@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.css}">
+  <link rel="stylesheet" th:href="@{/fontawesome-free-6.6.0-web/css/all.css}">
+  <link rel="stylesheet" th:href="@{/custom_css/style.css}">
+  <title>Accueil: G-Clinic</title>
+  <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to right, #F5F5F5, #E0E0E0);
+        margin: 0;
+        padding: 0;
+        color: #344955;
+    }
+
+    .sidebar {
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        padding: 20px;
+        background-color: #344955;
+        color: #FFFFFF;
+        overflow-y: auto;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .titreApp {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        text-align: center;
+        letter-spacing: 1px;
+        color: #F9AA33;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        margin: 15px 0;
+        padding: 15px;
+        background-color: transparent;
+        color: #F9AA33;
+        border-radius: 12px;
+        transition: background-color 0.3s, transform 0.3s;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-link:hover {
+        background-color: #F9AA33;
+        color: #344955;
+        transform: translateX(10px);
+    }
+
+    .nav-link i {
+        margin-right: 10px;
+    }
+
+    .nomUtil {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 1rem;
+        color: #344955;
+        display: flex;
+        align-items: center;
+        gap:10px;
+        padding: 5px;
+        z-index: 500;
+    }
+
+    .nomUtil h6 {
+        margin: 0;
+        margin-right: 10px;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 1px;
+        padding: 12px 20px;
+        cursor: pointer;
+       color: #F9AA33;
+        background-color: #344955;
+        font-size: 1.2rem;
+        border-radius: 8px;
+        transition: background 0.3s;
+    }
+
+    .btn:hover {
+         background-color: #F9AA33;
+        color: #344955;
+    }
+
+    footer {
+        font-size: 12px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 25px;
+        background-color: #344955;
+        color: #FFFFFF;
+        opacity: 0.9;
+    }
+
+    .card {
+        width: 22%;
+        height: 300px;
+        border-radius: 15px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .card-body {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #FFFFFF;
+        flex-grow: 1;
+    }
+
+    .card-body span {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    .card-body h5 {
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: #888888;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        position: fixed;
+        overflow: scroll;
+        top: 6%;
+        left: 20%;
+        width: 80%;
+        height: 88%;
+        border: 1px solid black;
+        justify-content: space-between;
+        align-content: flex-start;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div class="config">
+
+  <div>
+        <a href="#courses" class="btn">Ajouter un entreprise</a>
+      </div>
+      <div>
+        <a href="#courses" class="btn">Ajouter une région</a>
+      </div>
+      <div>
+        <a href="#courses" class="btn">Ajouter une ville</a>
+      </div>
+      <div>
+        <a href="#courses" class="btn">Ajouter une agence</a>
+      </div>
+      <div>
+        <a href="#courses" class="btn">Ajouter une caisse</a>
+      </div>
+      <div>
+        <a href="#courses" class="btn">Ajouter une banque</a>
+      </div>
+      <div>
+        <a href="#courses" class="btn">Ajouter un produit</a>
+      </div>
+
+</div>
+
+<footer class="text-center">
+  © G-Clinic v-1.0 - POWERED BY KWADJIO NANA Roméo Yannick
+</footer>
+<script th:inline="javascript">
+  let state;
+function afficheMenu(){
+  document.querySelector(".config").addEventListener('click', () => {
+
+     if(state){document.querySelector(".content").style.display='none',state=false}else{
+     document.querySelector(".content").style.display='inline-block';document.querySelector(".content").style.display='flex';state=true}
+  });
+  }
+afficheMenu();
+
+
+</script>
+<script th:src="@{/bootstrap/js/bootstrap.bundle.js}"></script>
+<script th:src="@{/fontawesome-free-6.6.0-web/js/all.js}"></script>
+</body>
+</html>
+
+

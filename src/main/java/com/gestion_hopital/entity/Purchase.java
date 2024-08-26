@@ -43,7 +43,5 @@ public class Purchase {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "purchaseCountryId",referencedColumnName = "idCountry")
     private Country country;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "purchaseUserId",referencedColumnName = "idUser")
-    private Users users;
+    private String users;
 }

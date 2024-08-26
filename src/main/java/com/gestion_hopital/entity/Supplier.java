@@ -26,7 +26,5 @@ public class Supplier {
     private Set<Product> products=new HashSet<>();
     @OneToMany(mappedBy = "supplier",cascade = CascadeType.ALL)
     private Set<Purchase> purchases;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "supplierUserId",referencedColumnName = "idUser")
-    private Users users;
+    private String users;
 }

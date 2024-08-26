@@ -27,9 +27,7 @@ public class MvtStock {
     private double outgoingQuantity;
     private double finalStock;
     private double valueStock;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="mvtUsersId",referencedColumnName = "idUser")
-    private Users users;
+    private String users;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="mvtStoreId",referencedColumnName = "idStore")
     private Store store;

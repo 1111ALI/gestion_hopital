@@ -31,9 +31,7 @@ public class Sale {
     private Profit profit;
     private double SellingPrice;
     private String lotSale;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "saleUserId",referencedColumnName = "idUser")
-    private Users users;
+    private String users;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "SaleAgencyId",referencedColumnName = "idAgency")
     private Agency agency;

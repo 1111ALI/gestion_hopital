@@ -21,14 +21,16 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .authorizeHttpRequests(authorizeRequest->authorizeRequest
-                        .requestMatchers("/login","/**").permitAll()
+                        .requestMatchers("/login","/deconnexion","/enterprise","/css","/js","/custom_css","/logout").permitAll()
                         .anyRequest().authenticated())
                 .formLogin(login->login
                         .loginPage("/login")
-                        .defaultSuccessUrl("/home",true)
+                       .defaultSuccessUrl("/home")
+                        .failureUrl("/login")
                         .permitAll())
                 .logout(logout->logout
                         .logoutUrl("/logout")
+                        .logoutSuccessUrl("/login")
                         .permitAll());
                 return httpSecurity.build();
     }

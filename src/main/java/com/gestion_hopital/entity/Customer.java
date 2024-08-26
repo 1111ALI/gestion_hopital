@@ -25,9 +25,7 @@ public class Customer {
     private double retrait;
     private double solde;
     private double balanceCredit;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="customUserId",referencedColumnName = "idUser")
-    private Users users;
+    private String users;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="CustomerEntrepriseId",referencedColumnName = "idEnterprise")
     private Enterprise enterprise;

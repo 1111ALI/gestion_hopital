@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' th:href="@{/bootstrap/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/custom_css/style.css}">
+
+    <title>Création d'une entreprise</title>
+    <style>
+        body {
+    background-color:#344955;
+   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+footer{
+font-size:12px;
+width:100%;
+position:absolute;
+bottom:0%;
+display:flex;
+flex-direction:row;
+justify-content: center;
+align-items:center;
+height:50px;
+opacity:0.7;
+ margin-top: 50px;
+}
+
+
+    </style>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="form__enterprise">
+        <form th:action="@{/enterprise}" method="post" th:object="${enterpriseDto}">
+            <div class="titreApp">G-Clinic</div>
+            <div class="form-floating mb-3">
+                <input type="text" name="name" th:field="*{name}" class="form-control" id="floatingInput" placeholder="nom de l'entreprise">
+                <label for="floatingInput">Nom de l'entreprise</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" name="email" th:field="*{email}" class="form-control" id="floatingPassword" placeholder="name@example.com">
+                <label for="floatingPassword">E-mail</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" name="phoneNumber" th:field="*{phoneNumber}" class="form-control" id="floatingPhoneNumber" placeholder="Nº de téléphone">
+                <label for="floatingPhoneNumber">Nº de téléphone</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" name="slogan" th:field="*{slogan}" class="form-control" id="floatingSlogan" placeholder="Slogan">
+                <label for="floatingSlogan">Slogan</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text"  name="uniqueIdentificationNumber" th:field="*{uniqueIdentificationNumber}" class="form-control" id="floatingUniqueIdentificationNumber" placeholder="N.U.I">
+                <label for="floatingUniqueIdentificationNumber">N.U.I.</label>
+            </div>
+            <div class="form-floating mb-3">
+                <label for="floatingFileName">Fichier</label>
+                <input type="file" name="file" class="form-control" id="floatingFileName" placeholder="Fichier">
+            </div>
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6"><button type="submit" class="btn btn-primary">Enregistrer</button></div>
+                <div class="col-3"></div>
+            </div>
+        </form>
+    </div>
+</div>
+<footer>
+    ©Copyright G-Clinic v-1.0 - POWERED BY KWADJIO NANA Roméo Yannick
+</footer>
+<script th:src="@{/bootstrap/js/bootstrap.bundle.js}"></script>
+</body>
+</html>

@@ -20,9 +20,7 @@ public class Profit {
     private double montant;
     @OneToOne(mappedBy = "profit",cascade = CascadeType.ALL)
     private Sale sale;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "profitUserId",referencedColumnName = "idUser")
-    private Users users;
+    private String users;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "profitAgencyId",referencedColumnName = "idAgency")
     private Agency agency;

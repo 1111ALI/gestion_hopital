@@ -22,9 +22,7 @@ public class Payment {
     private Invoice invoice;
     private double amount;
     private double balanceCredit;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "paymentUserId",referencedColumnName = "idUser")
-    private Users users;
+    private String users;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "paymentAgencyId",referencedColumnName = "idAgency")
     private Agency agency;
