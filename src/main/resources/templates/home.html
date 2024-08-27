@@ -93,16 +93,14 @@
         }
 
         .btn__config{
-            display: inline-block;
-            margin-top: 1px;
-            padding: 12px 20px;
-            cursor: pointer;
-           color: #F9AA33;
-            background-color: #344955;
-            font-size: 1.2rem;
-            border-radius: 8px;
-            transition: background 0.3s;
-            width:100%;
+       width: 200px;
+    height: 50px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    color: #F9AA33;
+    background-color: #344955;
+    transition: background 0.3s;
 
         }
 
@@ -198,6 +196,33 @@
         #dropdownMenuButton1,#dropdownMenuButton2,#dropdownMenuButton3,#dropdownMenuButton4,#dropdownMenuButton5,#dropdownMenuButton6,#dropdownMenuButton7,#dropdownMenuButton8,#dropdownMenuButton9,#dropdownMenuButton10{
         width:200px;
         }
+
+        .dropdown-item,.dropdown-menu{
+        color: #F9AA33;
+            background-color: #344955;
+        }
+        .dropdown-item:hover{
+         background-color: #F9AA33;
+            color: #344955;
+        }
+        .div__ajout__entreprise{display:none}
+
+        .form__entreprise{
+        border:1px solid #F9AA33;
+        padding:5%;
+        border-radius:20px;
+        background-color: #344955;
+        box-shadow:0px 0px 5px #F9AA33;
+        width:150%;
+        }
+
+        #floatingNameEntreprise,#floatingEmailEntreprise,#floatingPhoneNumberEntrepise,#floatingSlogan,#floatingUniqueIdentificationNumber{
+      /** height:30px ;**/
+        }
+
+        .div__affiche__pays{padding:20px;}
+
+
     </style>
 
 </head>
@@ -287,120 +312,254 @@
 
 
 </div>
+
 <div class="div__config border">
 
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-           Pays
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Ajouter</a></li>
-        </ul>
+    <div class="card" id="div__pays">
+        <img src="img/country.jpg" alt="">
+        <div class="card-body">
+            <span>Pays</span>
+            <h5>Ajoutez, modifiez et supprimez...</h5>
+            <button class="btn" id="config_pays">Configurer</button>
+        </div>
     </div>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-            Région
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-            <li><a class="dropdown-item" href="#">Ajouter</a></li>
-            <li><a class="dropdown-item" href="#">Consulter</a></li>
-        </ul>
+    <div class="card" id="div__region">
+        <img src="img/region.jpg" alt="">
+        <div class="card-body">
+            <span>Région</span>
+            <h5>Ajoutez, modifiez et supprimez...</h5>
+            <button class="btn">Configurer</button>
+        </div>
     </div>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
-            Ville
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-            <li><a class="dropdown-item" href="#">Ajouter</a></li>
-            <li><a class="dropdown-item" href="#">Consulter</a></li>
-        </ul>
+    <div class="card" id="div__ville">
+        <img src="img/ville.jpg" alt="">
+        <div class="card-body">
+            <span>Ville</span>
+            <h5>Ajoutez, modifiez et supprimez...</h5>
+            <button class="btn">Configurer</button>
+        </div>
     </div>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
-            Agence
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
-            <li><a class="dropdown-item" href="#">Ajouter</a></li>
-            <li><a class="dropdown-item" href="#">Consulter</a></li>
-            <li><a class="dropdown-item" href="#">Supprimer</a></li>
-        </ul>
+    <div class="card" id="div__entreprise">
+        <img src="img/clinic5.jpg" alt="">
+        <div class="card-body">
+            <span>Entreprise</span>
+            <h5>Ajoutez, modifiez et supprimez...</h5>
+            <button class="btn">Configurer</button>
+        </div>
     </div>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false">
-            Client
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
-            <li><a class="dropdown-item" href="#">Ajouter</a></li>
-            <li><a class="dropdown-item" href="#">Consulter</a></li>
-        </ul>
+    <div class="card" id="div__agence">
+        <img src="img/clinic5.jpg" alt="">
+        <div class="card-body">
+            <span>Agence</span>
+            <h5>Ajoutez, modifiez et supprimez...</h5>
+            <button class="btn">Configurer</button>
+        </div>
     </div>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false">
-            Caisse
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton6">
-            <li><a class="dropdown-item" href="#">Ajouter</a></li>
-            <li><a class="dropdown-item" href="#">Consulter</a></li>
-        </ul>
+    <div class="card" id="div__clients">
+        <img src="img/clinic5.jpg" alt="">
+        <div class="card-body">
+            <span>Client</span>
+            <h5>Ajoutez, modifiez et supprimez...</h5>
+            <button class="btn">configurer</button>
+        </div>
     </div>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton7" data-bs-toggle="dropdown" aria-expanded="false">
-            Banque
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton7">
-            <li><a class="dropdown-item" href="#">Ajouter</a></li>
-            <li><a class="dropdown-item" href="#">Consulter</a></li>
-        </ul>
+    <div class="card" id="div__caisse">
+        <img src="img/clinic5.jpg" alt="">
+        <div class="card-body">
+            <span>Caisse</span>
+            <h5>Ajoutez, modifiez et supprimez...</h5>
+            <button class="btn">Configurer</button>
+        </div>
     </div>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton8" data-bs-toggle="dropdown" aria-expanded="false">
-            Magasin
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton8">
-            <li><a class="dropdown-item" href="#">Ajouter</a></li>
-            <li><a class="dropdown-item" href="#">Consulter</a></li>
-        </ul>
+    <div class="card" id="div__banque">
+        <img src="img/clinic5.jpg" alt="">
+        <div class="card-body">
+            <span>Banque</span>
+            <h5>Ajoutez, modifiez et supprimez...</h5>
+            <button class="btn">Configurer</button>
+        </div>
     </div>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton9" data-bs-toggle="dropdown" aria-expanded="false">
-           Produit
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton9">
-            <li><a class="dropdown-item" href="#">Ajouter</a></li>
-            <li><a class="dropdown-item" href="#">Consulter</a></li>
-        </ul>
+    <div class="card" id="div__magasins">
+        <img src="img/clinic5.jpg" alt="">
+        <div class="card-body">
+            <span>Magasin</span>
+            <h5>Ajoutez, modifiez et supprimez...</h5>
+            <button class="btn">Configurer</button>
+        </div>
     </div>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton10" data-bs-toggle="dropdown" aria-expanded="false">
-            Utilisateur
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton10">
-            <li><a class="dropdown-item" href="#">Ajouter</a></li>
-            <li><a class="dropdown-item" href="#">Consulter</a></li>
-        </ul>
+    <div class="card" id="div__produit">
+        <img src="img/clinic5.jpg" alt="">
+        <div class="card-body">
+            <span>Produit</span>
+            <h5>Ajoutez, modifiez et supprimez...</h5>
+            <button class="btn">Configurer</button>
+        </div>
     </div>
 
+    <div class="card" id="div__sComptable">
+        <img src="img/clinic5.jpg" alt="">
+        <div class="card-body">
+            <span>Schema comptable</span>
+            <h5>Ajoutez, modifiez et supprimez...</h5>
+            <button class="btn">Configurer</button>
+        </div>
+    </div>
+    <div class="card" id="div__momo">
+        <img src="img/clinic5.jpg" alt="">
+        <div class="card-body">
+            <span>Mobile Money</span>
+            <h5>Ajoutez, modifiez et supprimez...</h5>
+            <button class="btn">Configurer</button>
+        </div>
+    </div>
+    <div class="card" id="div__service">
+        <img src="img/clinic5.jpg" alt="">
+        <div class="card-body">
+            <span>Services</span>
+            <h5>Ajoutez, modifiez et supprimez...</h5>
+            <button class="btn">Configurer</button>
+        </div>
+    </div>
+    <div class="card" id="div__depense">
+        <img src="img/clinic5.jpg" alt="">
+        <div class="card-body">
+            <span>Dépenses</span>
+            <h5>Ajoutez, modifiez et supprimez...</h5>
+            <button class="btn">Configurer</button>
+        </div>
+    </div>
+    <div class="card" id="div__utilisateur">
+        <img src="img/clinic5.jpg" alt="">
+        <div class="card-body">
+            <span>Utilisateur</span>
+            <h5>Ajoutez, modifiez et supprimez...</h5>
+            <button class="btn">Configurer</button>
+        </div>
+    </div>
 
 </div>
+
+<div class="div__ajout__entreprise">
+    <div class="form__entreprise">
+    <form th:action="@{/enterprise}" method="post" th:object="${enterpriseDto}" enctype="multipart/form-data">
+        <div class="form-floating mb-1">
+            <input type="text" name="name" th:field="*{name}" class="form-control" id="floatingNameEntreprise" placeholder="nom de l'entreprise">
+            <label for="floatingNameEntreprise">Nom de l'entreprise</label>
+        </div>
+        <div class="form-floating mb-1">
+            <input type="email" name="email" th:field="*{email}" class="form-control" id="floatingEmailEntreprise" placeholder="name@example.com">
+            <label for="floatingEmailEntreprise">E-mail</label>
+        </div>
+        <div class="form-floating mb-1">
+            <input type="text" name="phoneNumber" th:field="*{phoneNumber}" class="form-control" id="floatingPhoneNumberEntrepise" placeholder="Nº de téléphone">
+            <label for="floatingPhoneNumberEntrepise">Nº de téléphone</label>
+        </div>
+        <div class="form-floating mb-1">
+            <input type="text" name="slogan" th:field="*{slogan}" class="form-control" id="floatingSlogan" placeholder="Slogan">
+            <label for="floatingSlogan">Slogan</label>
+        </div>
+
+        <div class="form-floating mb-1">
+            <input type="text"  name="uniqueIdentificationNumber" th:field="*{uniqueIdentificationNumber}" class="form-control" id="floatingUniqueIdentificationNumber" placeholder="N.U.I">
+            <label for="floatingUniqueIdentificationNumber">N.U.I.</label>
+        </div>
+        <div class="form-floating mb-1">
+            <input type="file" name="file" class="form-control" id="floatingFileName" placeholder="Fichier">
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6"><button type="submit" class="btn btn-primary">Enregistrer</button></div>
+            <div class="col-3"></div>
+        </div>
+    </form>
+    </div>
+</div>
+
+<div class="div__affiche__pays border">
+    <div>
+        <button class="btn">Ajouter</button>
+    </div>
+    <div>
+    <table class="table table-striped table-hover">
+        <caption>List des pays</caption>
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>Nom du pays</th>
+            <th>Référence</th>
+            <th>ISO</th>
+            <th>Solde</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="country:${countries}">
+            <td th:text="${country.idCountry}"></td>
+            <td th:text="${country.name}"></td>
+            <td th:text="${country.iso}"></td>
+            <td th:text="${country.balanceCredit}"></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+
+
+
+
 <footer class="text-center">
     © G-Clinic v-1.0 - POWERED BY KWADJIO NANA Roméo Yannick
 </footer>
 <script th:inline="javascript">
-    let state;
+
 function afficheMenu(){
     document.querySelector(".config").addEventListener('click', () => {
-
-       if(state){document.querySelector(".content").style.display='none';document.querySelector(".div__config").style.display='inline-block';document.querySelector(".div__config").style.position='absolute';document.querySelector(".div__config").style.left='19%';document.querySelector(".div__config").style.top='5%';
+       document.querySelector(".content").style.display='none';
+        document.querySelector(".div__affiche__pays").style.display='none';
+       document.querySelector(".div__config").style.display='inline-block';
+       document.querySelector(".div__config").style.position='absolute';
+       document.querySelector(".div__config").style.left='19%';
+       document.querySelector(".div__config").style.top='10%';
        document.querySelector(".div__config").style.display='flex';
        document.querySelector(".div__config").style.flexDirection='row';
        document.querySelector(".div__config").style.justifyContent='space-between';
        document.querySelector(".div__config").style.flexWrap='wrap';
         document.querySelector(".div__config").style.gap='20px';
-       state=false}else{
-       document.querySelector(".content").style.display='inline-block';document.querySelector(".content").style.display='flex';document.querySelector(".div__config").style.display='none';state=true}
     });
-    }
+    };
  afficheMenu();
+
+
+ function afficherConfigPays(){
+ document.querySelector('#config_pays').addEventListener('click',()=>{
+  document.querySelector(".div__config").style.display='none';
+ document.querySelector(".div__affiche__pays").style.display='inline-block';
+ document.querySelector(".div__affiche__pays").style.display='flex';
+ document.querySelector(".div__affiche__pays").style.flexDirection='column';
+ document.querySelector(".div__affiche__pays").style.gap='30px';
+ document.querySelector(".div__affiche__pays").style.justifyContent='center';
+ document.querySelector(".div__affiche__pays").style.alignItems='center';
+  document.querySelector(".div__affiche__pays").style.position='absolute';
+   document.querySelector(".div__affiche__pays").style.top='10%';
+   document.querySelector(".div__affiche__pays").style.left='19%';
+ });
+ }
+ afficherConfigPays()
+
+document.querySelectorAll('.dropdown-toggle').forEach(dropdown => {
+    dropdown.addEventListener('click', function (e) {
+        let menu = this.nextElementSibling;
+        if (menu.classList.contains('show')) {
+            menu.classList.remove('show');
+        } else {
+            document.querySelectorAll('.dropdown-menu.show').forEach(openMenu => {
+                openMenu.classList.remove('show');
+            });
+            menu.classList.add('show');
+        }
+    });
+});
+
+
 
 
 </script>

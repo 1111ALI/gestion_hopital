@@ -15,7 +15,7 @@ public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idStore;
-    private String refMagasin;
+    private String refStore;
     private String name;
     private String responsibleName;
     private double balanceCredit;
