@@ -19,7 +19,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class EnterpriseServices implements EnterpriseInterfaces {
     private final EnterpriseRepository enterpriseRepository;
-private final Path route= Paths.get("uploads");
+private final Path route= Paths.get("src/main/resources/static/img/logo");
     @Override
     public Map<String, String> createEnterprise(EnterpriseDto enterpriseDto, MultipartFile file) {
 Map<String,String> response=new HashMap<>();
