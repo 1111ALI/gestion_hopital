@@ -16,6 +16,7 @@ public class EnterpriseDto {
     private String phoneNumber;
     private String slogan;
     private String uniqueIdentificationNumber;
-private MultipartFile file;
+     private String fileName;
+    private String fileType;
     private double balanceCredit;
 }

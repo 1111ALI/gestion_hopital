@@ -1,7 +1,10 @@
 package com.gestion_hopital.controller.view;
 
+import com.gestion_hopital.dto.EnterpriseDto;
+import com.gestion_hopital.entity.Country;
 import com.gestion_hopital.entity.Enterprise;
 import com.gestion_hopital.entity.Users;
+import com.gestion_hopital.repository.CountryRepository;
 import com.gestion_hopital.repository.EnterpriseRepository;
 import com.gestion_hopital.repository.UsersRepository;
 
@@ -21,6 +24,7 @@ import java.util.List;
 public class LoginView {
 private final UsersRepository usersRepository;
 private final EnterpriseRepository enterpriseRepository;
+private final CountryRepository countryRepository;
     @GetMapping("/login")
     public String loginPage(Model model){
         List<Enterprise> enterprises=enterpriseRepository.findAll();
@@ -42,6 +46,10 @@ private final EnterpriseRepository enterpriseRepository;
         }
 String nomUtil=userDetails.getUsername();
         model.addAttribute("nomUtil",nomUtil);
+        EnterpriseDto enterpriseDto=new EnterpriseDto();
+        model.addAttribute("enterpriseDto",enterpriseDto);
+        List<Country> countries=countryRepository.findAll();
+        model.addAttribute("countries",countries);
         existingUser.setConnected(true);
         usersRepository.save(existingUser);
         return "home";
