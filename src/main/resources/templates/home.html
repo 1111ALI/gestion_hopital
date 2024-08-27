@@ -220,8 +220,25 @@
       /** height:30px ;**/
         }
 
-        .div__affiche__pays{padding:20px;}
+.div__config{
+ display:none;
+}
 
+        .div__affiche__pays{
+        display:none;
+        padding:20px;}
+
+        .div__pays{display:none;}
+
+        .div__ajout__entreprise{display:none;}
+
+
+        #btn_entreprise{
+        border:1px solid #F9AA33;
+        }
+
+
+        .config{border:none;}
 
     </style>
 
@@ -254,13 +271,15 @@
         </ul>
 
     </nav>
+
     <div class="nomUtil">
         <h6 th:text="${nomUtil}"></h6>
         <form th:action="@{/logout}" method="post">
             <button type="submit" class="logout1"><img th:src="@{/img/se-deconnecter.png}" alt="deconnexion"></button>
         </form>
-        <a href="#courses" class="config"><img th:src="@{/img/configuration.png}" alt="configuration"></a>
+        <button class="config"><img th:src="@{/img/configuration.png}" alt="configuration"></button>
     </div>
+
     <main class="content">
         <div class="card" id="achat_vente">
             <img src="img/clinic1.jpg" alt="">
@@ -307,15 +326,11 @@
             </div>
         </div>
     </main>
-
-
-
-
 </div>
 
 <div class="div__config border">
 
-    <div class="card" id="div__pays">
+    <div class="card" id="div__pays__id">
         <img src="img/country.jpg" alt="">
         <div class="card-body">
             <span>Pays</span>
@@ -323,7 +338,8 @@
             <button class="btn" id="config_pays">Configurer</button>
         </div>
     </div>
-    <div class="card" id="div__region">
+
+    <div class="card" id="div__region__id">
         <img src="img/region.jpg" alt="">
         <div class="card-body">
             <span>Région</span>
@@ -331,7 +347,8 @@
             <button class="btn">Configurer</button>
         </div>
     </div>
-    <div class="card" id="div__ville">
+
+    <div class="card" id="div__ville__id">
         <img src="img/ville.jpg" alt="">
         <div class="card-body">
             <span>Ville</span>
@@ -339,7 +356,8 @@
             <button class="btn">Configurer</button>
         </div>
     </div>
-    <div class="card" id="div__entreprise">
+
+    <div class="card" id="div__entreprise__id">
         <img src="img/clinic5.jpg" alt="">
         <div class="card-body">
             <span>Entreprise</span>
@@ -347,7 +365,8 @@
             <button class="btn">Configurer</button>
         </div>
     </div>
-    <div class="card" id="div__agence">
+
+    <div class="card" id="div__agence__id">
         <img src="img/clinic5.jpg" alt="">
         <div class="card-body">
             <span>Agence</span>
@@ -355,7 +374,8 @@
             <button class="btn">Configurer</button>
         </div>
     </div>
-    <div class="card" id="div__clients">
+
+    <div class="card" id="div__clients__id">
         <img src="img/clinic5.jpg" alt="">
         <div class="card-body">
             <span>Client</span>
@@ -363,7 +383,8 @@
             <button class="btn">configurer</button>
         </div>
     </div>
-    <div class="card" id="div__caisse">
+
+    <div class="card" id="div__caisse__id">
         <img src="img/clinic5.jpg" alt="">
         <div class="card-body">
             <span>Caisse</span>
@@ -371,7 +392,8 @@
             <button class="btn">Configurer</button>
         </div>
     </div>
-    <div class="card" id="div__banque">
+
+    <div class="card" id="div__banque__id">
         <img src="img/clinic5.jpg" alt="">
         <div class="card-body">
             <span>Banque</span>
@@ -379,7 +401,8 @@
             <button class="btn">Configurer</button>
         </div>
     </div>
-    <div class="card" id="div__magasins">
+
+    <div class="card" id="div__magasins__id">
         <img src="img/clinic5.jpg" alt="">
         <div class="card-body">
             <span>Magasin</span>
@@ -387,7 +410,8 @@
             <button class="btn">Configurer</button>
         </div>
     </div>
-    <div class="card" id="div__produit">
+
+    <div class="card" id="div__produit__id">
         <img src="img/clinic5.jpg" alt="">
         <div class="card-body">
             <span>Produit</span>
@@ -396,7 +420,8 @@
         </div>
     </div>
 
-    <div class="card" id="div__sComptable">
+
+    <div class="card" id="div__sComptable__id">
         <img src="img/clinic5.jpg" alt="">
         <div class="card-body">
             <span>Schema comptable</span>
@@ -404,7 +429,8 @@
             <button class="btn">Configurer</button>
         </div>
     </div>
-    <div class="card" id="div__momo">
+
+    <div class="card" id="div__momo__id">
         <img src="img/clinic5.jpg" alt="">
         <div class="card-body">
             <span>Mobile Money</span>
@@ -412,7 +438,8 @@
             <button class="btn">Configurer</button>
         </div>
     </div>
-    <div class="card" id="div__service">
+
+    <div class="card" id="div__service__id">
         <img src="img/clinic5.jpg" alt="">
         <div class="card-body">
             <span>Services</span>
@@ -420,7 +447,8 @@
             <button class="btn">Configurer</button>
         </div>
     </div>
-    <div class="card" id="div__depense">
+
+    <div class="card" id="div__depense__id">
         <img src="img/clinic5.jpg" alt="">
         <div class="card-body">
             <span>Dépenses</span>
@@ -428,7 +456,8 @@
             <button class="btn">Configurer</button>
         </div>
     </div>
-    <div class="card" id="div__utilisateur">
+
+    <div class="card" id="div__utilisateur__id">
         <img src="img/clinic5.jpg" alt="">
         <div class="card-body">
             <span>Utilisateur</span>
@@ -438,6 +467,8 @@
     </div>
 
 </div>
+
+
 
 <div class="div__ajout__entreprise">
     <div class="form__entreprise">
@@ -468,16 +499,17 @@
         </div>
         <div class="row">
             <div class="col-3"></div>
-            <div class="col-6"><button type="submit" class="btn btn-primary">Enregistrer</button></div>
+            <div class="col-6"><button type="submit" class="btn" id="btn_entreprise">Enregistrer</button></div>
             <div class="col-3"></div>
         </div>
     </form>
     </div>
 </div>
 
+
 <div class="div__affiche__pays border">
     <div>
-        <button class="btn">Ajouter</button>
+        <button class="btn" id="id__ajout__pays">Ajouter</button>
     </div>
     <div>
     <table class="table table-striped table-hover">
@@ -504,67 +536,82 @@
 </div>
 
 
+<div class="div__pays">
+    <form th:action="@{/country}" method="post" th:object="${countryDto}">
+        <div class="form-floating mb-1">
+            <input type="text" name="name" th:field="*{name}" class="form-control" id="nameCountry" placeholder="nom du pays">
+            <label for="nameCountry">Nom du pays</label>
+        </div>
+
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6"><button type="submit" class="btn" id="btn_pays">Enregistrer</button></div>
+            <div class="col-3"></div>
+        </div>
+        <div>
+            <h3 th:if="response!=null">Enregistré avec succès</h3>
+        </div>
+    </form>
+
+</div>
+
 
 
 <footer class="text-center">
     © G-Clinic v-1.0 - POWERED BY KWADJIO NANA Roméo Yannick
 </footer>
+
 <script th:inline="javascript">
 
-function afficheMenu(){
-    document.querySelector(".config").addEventListener('click', () => {
-       document.querySelector(".content").style.display='none';
-        document.querySelector(".div__affiche__pays").style.display='none';
-       document.querySelector(".div__config").style.display='inline-block';
-       document.querySelector(".div__config").style.position='absolute';
-       document.querySelector(".div__config").style.left='19%';
-       document.querySelector(".div__config").style.top='10%';
-       document.querySelector(".div__config").style.display='flex';
-       document.querySelector(".div__config").style.flexDirection='row';
-       document.querySelector(".div__config").style.justifyContent='space-between';
-       document.querySelector(".div__config").style.flexWrap='wrap';
-        document.querySelector(".div__config").style.gap='20px';
-    });
-    };
+    function afficheMenu() {
+     document.querySelector('.config').addEventListener('click', () => {
+         document.querySelector('.content').style.display = 'none';
+         document.querySelector(".div__affiche__pays").style.display = 'none';
+         document.querySelector(".div__config").style.display = 'inline-block';
+         document.querySelector(".div__config").style.position = 'absolute';
+         document.querySelector(".div__config").style.left = '19%';
+         document.querySelector(".div__config").style.top = '10%';
+         document.querySelector(".div__config").style.display = 'flex';
+         document.querySelector(".div__config").style.flexDirection = 'row';
+         document.querySelector(".div__config").style.justifyContent = 'space-between';
+         document.querySelector(".div__config").style.flexWrap = 'wrap';
+         document.querySelector(".div__config").style.gap = '20px';
+     });
+ }
  afficheMenu();
 
-
- function afficherConfigPays(){
- document.querySelector('#config_pays').addEventListener('click',()=>{
-  document.querySelector(".div__config").style.display='none';
- document.querySelector(".div__affiche__pays").style.display='inline-block';
- document.querySelector(".div__affiche__pays").style.display='flex';
- document.querySelector(".div__affiche__pays").style.flexDirection='column';
- document.querySelector(".div__affiche__pays").style.gap='30px';
- document.querySelector(".div__affiche__pays").style.justifyContent='center';
- document.querySelector(".div__affiche__pays").style.alignItems='center';
-  document.querySelector(".div__affiche__pays").style.position='absolute';
-   document.querySelector(".div__affiche__pays").style.top='10%';
-   document.querySelector(".div__affiche__pays").style.left='19%';
- });
+ function afficheConfigPays() {
+     document.querySelector('#config_pays').addEventListener('click', () => {
+         document.querySelector(".div__config").style.display = 'none';
+         document.querySelector(".div__affiche__pays").style.display = 'inline-block';
+         document.querySelector(".div__affiche__pays").style.display = 'flex';
+         document.querySelector(".div__affiche__pays").style.flexDirection = 'column';
+         document.querySelector(".div__affiche__pays").style.gap = '30px';
+         document.querySelector(".div__affiche__pays").style.justifyContent = 'center';
+         document.querySelector(".div__affiche__pays").style.alignItems = 'center';
+         document.querySelector(".div__affiche__pays").style.position = 'absolute';
+         document.querySelector(".div__affiche__pays").style.top = '10%';
+         document.querySelector(".div__affiche__pays").style.left = '19%';
+     });
  }
- afficherConfigPays()
+ afficheConfigPays();
 
-document.querySelectorAll('.dropdown-toggle').forEach(dropdown => {
-    dropdown.addEventListener('click', function (e) {
-        let menu = this.nextElementSibling;
-        if (menu.classList.contains('show')) {
-            menu.classList.remove('show');
-        } else {
-            document.querySelectorAll('.dropdown-menu.show').forEach(openMenu => {
-                openMenu.classList.remove('show');
-            });
-            menu.classList.add('show');
-        }
-    });
-});
-
-
-
+ function affiche_form_pays() {
+     document.querySelector("#id__ajout__pays").addEventListener('click', () => {
+         document.querySelector(".div__pays").style.display = "inline-block";
+         document.querySelector(".div__pays").style.position = "absolute";
+         document.querySelector(".div__pays").style.top = "10%";
+         document.querySelector(".div__pays").style.left = "40%";
+     });
+ }
+ affiche_form_pays();
 
 </script>
+
 <script th:src="@{/bootstrap/js/bootstrap.bundle.js}"></script>
 <script th:src="@{/fontawesome-free-6.6.0-web/js/all.js}"></script>
+
+
 </body>
 </html>
 

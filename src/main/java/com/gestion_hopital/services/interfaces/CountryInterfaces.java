@@ -1,4 +1,10 @@
 package com.gestion_hopital.services.interfaces;
 
-public interface CountryInterfaces {
+import com.gestion_hopital.dto.CountryDto;
+
+import java.util.Map;
+
+public interface CountryInterfaces{
+
+    Map<String, String> createCountry(CountryDto countryDto);
 }

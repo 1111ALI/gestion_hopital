@@ -17,7 +17,6 @@ public class Country {
     private int idCountry;
     private String refCountry;
     private String name;
-    private String iso;
     private double balanceCredit;
     @OneToMany(mappedBy = "country",cascade = CascadeType.ALL)
     private Set<Customer> customers;

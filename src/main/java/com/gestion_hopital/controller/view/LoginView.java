@@ -1,5 +1,6 @@
 package com.gestion_hopital.controller.view;
 
+import com.gestion_hopital.dto.CountryDto;
 import com.gestion_hopital.dto.EnterpriseDto;
 import com.gestion_hopital.entity.Country;
 import com.gestion_hopital.entity.Enterprise;
@@ -28,19 +29,17 @@ private final CountryRepository countryRepository;
     @GetMapping("/login")
     public String loginPage(Model model){
         List<Enterprise> enterprises=enterpriseRepository.findAll();
-      // if(enterprises.isEmpty()){
-      //     return "redirect:/enterprise";
-      //  }
+
            model.addAttribute("enterprises",enterprises);
            return "login";
 
         }
 
 
-
     @GetMapping("/home")
     public String homePage(Model model, @AuthenticationPrincipal UserDetails userDetails){
         Users existingUser= usersRepository.findByUsername(userDetails.getUsername()).orElseThrow(()->new RuntimeException("Utilisateur introuvable"));
+
         if(existingUser.isConnected()){
             return "redirect:/deconnexion";
         }
@@ -48,6 +47,8 @@ String nomUtil=userDetails.getUsername();
         model.addAttribute("nomUtil",nomUtil);
         EnterpriseDto enterpriseDto=new EnterpriseDto();
         model.addAttribute("enterpriseDto",enterpriseDto);
+        CountryDto countryDto=new CountryDto();
+        model.addAttribute("countryDto",countryDto);
         List<Country> countries=countryRepository.findAll();
         model.addAttribute("countries",countries);
         existingUser.setConnected(true);
